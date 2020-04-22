@@ -3,15 +3,15 @@ position: relative;
 margin: 50px auto;
 width: 600px;
 height: 600px;
-border: 2px solid #000;
+border: 2px solid black;
 }
 
 .snake-dot {
   position: absolute;
   width: 2%;
   height: 2%;
-  background-color: #000;
-  border: 1px solid #fff;
+  background-color: lightblue;
+  border: 1px solid darkblue;
   z-index: 2;
 }
 
@@ -19,7 +19,7 @@ border: 2px solid #000;
   position: absolute;
   width: 2%;
   height: 2%;
-  background: red;
-  border: 1px solid #fff;
+  background: lightpink;
+  border: 1px solid red;
   z-index: 1;
 }

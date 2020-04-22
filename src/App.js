@@ -12,7 +12,7 @@ const getRandomCoordinates = () => {
 
 const initialState = {
   food: getRandomCoordinates(),
-  speed: 200,
+  speed: 100,
   direction: 'RIGHT',
   snakeDots: [
     [0,0],
@@ -125,7 +125,7 @@ class App extends Component {
   }
 
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+    alert(`Game Over. Your Score is ${this.state.snakeDots.length}`);
     this.setState(initialState)
   }
 
