@@ -78,6 +78,36 @@ class App extends Component {
     })
   }
 
+  checkIfOutOfBorders() {
+    let head = this.state.snakeDots[this.state.snakeDots.length - 1];
+    if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+      this.onGameOver();
+    }
+  }
+
+  checkIfCollapsed() {
+    let snake = [...this.state.snakeDots];
+    let head = snake[snake.length - 1];
+    snake.pop();
+    snake.forEach(dot => {
+      if (head[0] == dot[0] && head[1] == dot[1]) {
+        this.onGameOver();
+      }
+    })
+  }
+
+  checkIfEat() {
+    let head = this.state.snakeDots[this.state.snakeDots.length - 1];
+    let food = this.state.food;
+    if (head[0] == food[0] && head[1] == food[1]) {
+      this.setState({
+        food: getRandomCoordinates()
+      })
+      this.enlargeSnake();
+      this.increaseSpeed();
+    }
+  }
+
   render() {
     return (
       <div className="game-area">
