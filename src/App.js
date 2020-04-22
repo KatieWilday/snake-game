@@ -22,16 +22,26 @@ const initialState = {
 
 class App extends Component {
 
-  state = {
-    snakeDots: [
-      [0,0],
-      [2,0]
-    ]
+  state = initialState;
+
+  componentDidMount() {
+    setInterval(this.moveSnake, this.state.speed);
+    document.onkeydown = this.onKeyDown;
   }
+
+  componentDidUpdate() {
+    this.checkIfOutOfBorders();
+    this.checkIfCollapsed();
+    this.checkIfEat();
+  }
+
+  
+
   render() {
     return (
       <div className="game-area">
         <Snake snakeDots={this.state.snakeDots}/>
+        <Food dot={this.state.food}/>
       </div>
     );
   }
