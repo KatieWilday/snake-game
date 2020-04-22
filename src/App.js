@@ -108,6 +108,27 @@ class App extends Component {
     }
   }
 
+  enlargeSnake() {
+    let newSnake = [...this.state.snakeDots];
+    newSnake.unshift([])
+    this.setState({
+      snakeDots: newSnake
+    })
+  }
+
+  increaseSpeed() {
+    if (this.state.speed > 10) {
+      this.setState({
+        speed: this.state.speed - 10
+      })
+    }
+  }
+
+  onGameOver() {
+    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+    this.setState(initialState)
+  }
+
   render() {
     return (
       <div className="game-area">
