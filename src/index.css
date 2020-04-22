@@ -23,3 +23,24 @@ border: 2px solid black;
   border: 1px solid red;
   z-index: 1;
 }
+
+.button {
+  background-color: green;
+  color: white;
+  border: none;
+  bottom: 0;
+  height: 30px;
+  font-size: 12pt;
+  float: center;
+  width: 90px;
+  position: center center;
+  margin-top: 3;
+}
+
+.button:hover {
+  background-color: orange;
+}
+
+.button:disabled {
+  background-color: grey;
+}
